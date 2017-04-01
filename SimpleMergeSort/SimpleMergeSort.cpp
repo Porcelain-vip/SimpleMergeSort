@@ -15,9 +15,8 @@ void SimpleMergeSortHelp(Type* a, int left, int right)
 		unique_ptr<Type[]> b(new Type[right + 1]);
 		for (; low <= mid && high <= right;)                                             //merge two parts
 		{
-			if (a[low] <= a[high]) { b[i] = a[low]; ++low; }
-			else { b[i] = a[high]; ++high; }
-			++i;
+			if (a[low] <= a[high]) { b[i] = a[low]; ++low; ++i; }
+			else { b[i] = a[high]; ++high; ++i; }
 		}
 		for (; low <= mid;) { b[i] = a[low]; ++low; ++i; }
 		for (; high <= right;) { b[i] = a[high]; ++high; ++i; }
